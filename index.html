@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app.61c9f4a9.css">
+
+    <link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app.e8b13026.js">
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    
+
+    <!-- Livewire Styles -->
+<style >
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
+        display: none;
+    }
+
+    [wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {
+        display:none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+</head>
+
+<body class="antialiased w-screen overflow-x-hidden" x-data="{ openDevis: false }" :class="{ 'overflow-y-hidden': openDevis }">
+
+    <header class="fixed top-0 flex w-full justify-center z-10">
+        <nav
+    class="container m-auto flex justify-between items-center bg-[#423C39]/70 backdrop-blur-sm rounded-b-xl p-2 list-none">
+
+    <li
+        class="flex-1 text-center text-base lg:text-lg text-white uppercase hidden lg:block">
+        <a href="" class="hover:underline decoration-white">home</a>
+    </li>
+    <li
+        class="flex-1 text-center text-base lg:text-lg text-white uppercase hidden lg:block">
+        <a href="#showroom" class="hover:underline decoration-white">showroom</a>
+    </li>
+
+    <li>
+        <img src="logo-white.svg" alt="logo" class="w-20 lg:w-20">
+    </li>
+
+    <li
+        class="flex-1 text-center text-base lg:text-lg text-white uppercase hidden lg:block">
+        <a href="" class="hover:underline decoration-white">services</a>
+    </li>
+    <li
+        class="flex-1 text-center text-base lg:text-lg text-white uppercase hidden lg:block">
+        <a href="" class="hover:underline decoration-white">contact</a>
+    </li>
+
+    <li class="text-white lg:hidden block">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+          </svg>
+    </li>
+</nav>
+    </header>
+
+    <main>
+            <section class="z-0 bg-black  w-screen">
+
+        <div class="w-full overflow-hidden bg-cover bg-center bg-slate-900"
+    style="background-image: url('hero.jpg')">
+
+    <div class="w-full h-full flex flex-col bg-[#423C39]/50 backdrop-blur-sm">
+
+        <div class="container m-auto grid grid-cols-1 lg:grid-cols-2 mt-24">
+
+            <div class="flex flex-col justify-center">
+
+                <div class="m-auto rounded-xl p-4 text-center lg:text-start text-white ">
+
+                    <h1 class="text-5xl lg:text-7xl font-bold font-italiana uppercase ">
+                        VOS idées <br> nos meuble
+
+                    </h1>
+                    <p class="mt-10 text-xl">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quisquam nemo facilis incidunt, at
+                        explicabo iusto tenetur, culpa ad quis aspernatur blanditiis quaerat quam sed officia ut
+                        voluptate! Dolorem, excepturi?
+                    </p>
+                    <div class="flex justify-center lg:justify-start py-4 mt-5">
+                        <button class="relative bg-transparent border-2 border-white text-white px-4 py-2 text-xl shadow-lg transition-all duration-700 hover:-translate-y-2 hover:bg-white hover:text-maron"
+                        @click="openDevis = true">
+                        Demander un devis
+                        <span class="flex h-3 w-3 absolute rounded-full bg-white -top-2 -right-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                        </span>
+                    </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex p-8">
+                <img src="heroooo.png" alt="img" class="w-full m-auto border-4 border-white">
+            </div>
+
+
+        </div>
+        
+
+
+    </div>
+</div>
+
+    </section>
+
+    <section class="relative bg-white py-20">
+
+        <div class="z-40 container m-auto">
+
+    <h2 class="text-center text-5xl font-italiana uppercase font-bold">NOS SHOWROOMS</h2>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-2 mt-16 p-2">
+        <div class="m-auto flex flex-col h-full">
+            <div class="rounded-full bg-gray-200 border-2 border-maron w-44 h-44">
+                <img src="kitchen.png" alt="kitchen" class="object-contain p-10">
+            </div>
+            <div class="flex items-center flex-1 m-auto">
+                <h3 class="text-3xl uppercase text-center mt-2">CUISINES</h3>
+            </div>
+        </div>
+
+        <div class="m-auto flex flex-col h-full">
+            <div class="rounded-full bg-gray-200 border-2 border-maron w-44 h-44">
+                <img src="double-bed.png" alt="kitchen" class="object-contain p-10">
+            </div>
+            <div class="flex items-center flex-1 m-auto">
+                <h3 class="text-3xl uppercase text-center mt-2">chambe <br> à coucher</h3>
+            </div>
+        </div>
+
+        <div class="m-auto flex flex-col h-full">
+            <div class="  rounded-full bg-gray-200 border-2 border-maron w-44 h-44">
+                <img src="closet.png" alt="kitchen" class="object-contain p-10">
+            </div>
+            <div class="flex items-center flex-1 m-auto">
+                <h3 class="text-3xl uppercase text-center mt-2">Dressing</h3>
+            </div>
+        </div>
+
+        <div class="m-auto flex flex-col h-full">
+            <div class="  rounded-full bg-gray-200 border-2 border-maron w-44 h-44">
+                <img src="living-room.png" alt="living-room" class="object-contain p-10">
+            </div>
+            <div class="flex items-center flex-1 m-auto">
+                <h3 class="text-3xl uppercase text-center mt-2">salons</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+    </section>
+
+    <section class="relative py-20">
+
+        <div
+    class="grid lg:grid-cols-2 content-end place-content-between container m-auto gap-y-5 p-2 text-center lg:text-start">
+    <div>
+        <h3 class="text-2xl font-italiana uppercase font-bold">
+            Nos realisations vos plaise? <br>
+            <span class="text-maron text-4xl">demander votre devis</span>
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, adipisci. Aperiam assumenda odit
+            tempore maiores earum at deleniti placeat culpa minus odio tempora itaque doloribus repellendus
+            asperiores, enim magnam eius?
+        </p>
+
+        <form action="">
+            <div class="grid grid-cols gap-y-2 lg:w-2/3 mt-16" x-data="{ company: false }">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Nom complet">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Email">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Numéro téléphone">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Ville">
+                <div>
+                    <label for="compnay"> Vous etes une entreprise ?</label>
+                    <input type="checkbox" name="company" id="" x-model="company">
+                </div>
+                <input x-show="company" x-transition type="text" class="rounded-full p-4 border-2 border-black"
+                    placeholder="Nom de l'entreprise">
+                    <div class="bg-black flex w-fit py-2 px-6 rounded-full justify-self-end">
+
+                        <button
+                            class=" text-white w-full flex justify-center items-center peer">
+                            Envoyer
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-chevron-right peer-hover:translate-x-2 transition-all duration-500" width="36"
+                            height="36" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <polyline points="9 6 15 12 9 18" />
+                        </svg>
+                    </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="flex justify-end" class="p-4">
+
+        <img src="contactimg.png" alt="img" class="lg:w-2/3">
+    </div>
+
+</div>
+
+    </section>
+
+    <div x-show="openDevis" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="trabslate-x-0" x-transition:leave-end="translate-x-full" x-cloak
+    class="fixed inset-0 flex flex-col items-center justify-center w-full h-full z-50 backdrop-blur-sm">
+
+    <div @click.outside="openDevis = false"
+        class="flex flex-col justify-between fixed right-0 h-screen overflow-auto p-3 text-left bg-white shadow-2xl  w-full lg:w-1/3">
+
+        <div class="flex justify-between items-center">
+
+            <h3 class="text-start font-bold text-xl text-accent uppercase">
+                <span>mobis-dz.com</span>
+            </h3>
+
+            <button @click="openDevis = false" class="p-2 border-2 border-maron rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="32"
+                    height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#AE7E46" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+
+        </div>
+
+        <form action="">
+            <div class="grid grid-cols gap-y-2" x-data="{ company: false }">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Nom complet">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Email">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Numéro téléphone">
+                <input type="text" class="rounded-full p-4 border-2 border-black focus:border-maron focus:outline-maron focus:ring-maron focus:outline-0" placeholder="Ville">
+                <div>
+                    <label for="compnay"> Vous etes une entreprise ?</label>
+                    <input type="checkbox" name="company" id="" x-model="company">
+                </div>
+                <input x-show="company" x-transition type="text" class="rounded-full p-4 border-2 border-black"
+                    placeholder="Nom de l'entreprise">
+
+                <div class="bg-black flex w-fit py-2 px-6 rounded-full justify-self-end">
+
+                    <button
+                        class=" text-white w-full flex justify-center items-center justify-self-end peer">
+                        Envoyer
+                    </button>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-chevron-right peer-hover:translate-x-2 transition-all duration-500" width="36"
+                        height="36" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="9 6 15 12 9 18" />
+                    </svg>
+                </div>
+
+            </div>
+        </form>
+        <span class="mt-2 text-start">
+            <a href="tel:0561531963" class="font-bold inline-flex gap-x-1" dir="ltr">
+                <br class="block lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                05 61 53 19 63
+            </a>
+        </span>
+
+    </div>
+
+</div>
+
+
+
+    <img src="break2.png" alt="break" class="w-full object-contain sticky top-0 z-10 ">
+    <section class="bg-white relative z-20">
+
+        <div class="container m-auto grid lg:grid-cols-2 gap-x-20 gap-y-2 w-full z-50 bg-white py-10 p-2">
+
+    <div class="flex items-center flex-col gap-y-5">
+
+        <div class="flex flex-col rounded-xl border-2 border-black p-4">
+            <h3 class="text-3xl font-italiana uppercase font-bold">equipe professionnel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste error ipsum quidem,
+                praesentium nulla cumque autem nam dolorum porro animi ullam! Nam quis harum illum consectetur
+                repellat optio nemo.</p>
+        </div>
+        <div class="flex flex-col rounded-xl border-2 border-black p-4">
+            <h3 class="text-3xl font-italiana uppercase font-bold">la perfection</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste error ipsum quidem,
+                praesentium nulla cumque autem nam dolorum porro animi ullam! Nam quis harum illum consectetur
+                repellat optio nemo.</p>
+        </div>
+        <div class="m-auto hidden lg:block">
+            <img src="chair.png" alt="chair">
+        </div>
+
+    </div>
+
+    <div class="w-full flex justify-end">
+        <img src="workman.png" alt="img" class="">
+    </div>
+</div>
+
+    </section>
+
+    <section class="relative z-20 bg-white py-20">
+
+        <div class="container mx-auto flex flex-col gap-y-20">
+    <div class="flex flex-col w-full justify-center items-center gap-y-10">
+        <h3 class="text-3xl font-italiana font-bold uppercase">mot du directeur</h3>
+        <img src="quotes.png" alt="quotes">
+        <p class="text-3xl text-gray-500 text-center">"Home is the most importnante place in the world"</p>
+    </div>
+    <div class="flex flex-wrap gap-y-6 p-2">
+
+        <div class="flex w-full justify-center gap-x-6">
+            <div class="">
+                <img src="img.png" alt="">
+            </div>
+            <div class="">
+                <img src="img2.png" alt="">
+            </div>
+            <div class="">
+                <img src="img3.png" alt="">
+            </div>
+        </div>
+
+        <div class="flex w-full justify-center gap-x-6">
+            <div class="">
+                <img src="img4.png" alt="">
+            </div>
+            <div class="">
+                <img src="img5.png" alt="">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </section>
+
+    <section class="relative z-20 bg-white py-20 px-2">
+
+        <div class="container m-auto px-4 lg:py-20 border-4 border-maron rounded-3xl">
+    <h3 class="text-xl lg:text-5xl font-italiana font-bold text-center uppercase">let's get social</h3>
+    <div class="grid grid-cols-2 mt-14">
+        <a class="text-gray-400 text-lg lg:text-3xl flex items-center lg:gap-x-10 justify-center flex-col"> <img src="fb.png" alt="fb"> Mobis Algérie</a>
+        <a class="text-gray-400 text-lg lg:text-3xl flex items-center lg:gap-x-10 justify-center flex-col"> <img src="instagram.png" alt="fb"> Mobis Algérie</a>
+    </div>
+</div>
+
+    </section>
+    </main>
+
+    <footer>
+        <div class="relative">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12969.15155421151!2d-0.5856805!3d35.6452781!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xedf82ca42cf063bb!2sMobis%20Fabrication%20De%20Meuble!5e0!3m2!1sfr!2sdz!4v1661140602404!5m2!1sfr!2sdz"
+        class="w-full h-[600px] grayscale" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="container m-auto bg-maron text-white rounded-t-3xl inset-x-0 p-10 absolute bottom-0 h-fit">
+            <div class="flex justify-between">
+                <div class="flex flex-col space-y-5">
+                    <h1 class="text-4xl font-bold font-italiana uppercase">vos idées nos meuble</h1>
+                    <a href="">0550 00 00 00</a>
+                    <a href="">0770 00 00 00 </a>
+                    <a href="">contact@mobis-dz.com</a>
+
+                </div>
+                <div>
+
+                    <img src="logo-white.png" alt="logo-white">
+                </div>
+
+            </div>
+        </div>
+</div>
+    </footer>
+
+    <!-- Livewire Scripts -->
+
+<script src="/livewire/livewire.js?id=de3fca26689cb5a39af4" data-turbo-eval="false" data-turbolinks-eval="false" ></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false" >
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'jB9Yn774nbOVhLFTXI9KPddHr17lKnpNV4BZtalS';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    let started = false;
+
+    window.addEventListener('alpine:initializing', function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+</script>
+</body>
+
+</html>
